@@ -16,7 +16,8 @@ import { NFT, NFTDrop } from "@thirdweb-dev/sdk";
 
 import { useEffect, useState } from "react";
 
-const target = "0x42D4Db7452FD8e3Ec31594b63E44627fde89F326";
+// Make sure to deploy a target contract address for your NFT Drop using Thirdweb's dashboard!
+const target = "";
 
 const GaslessNFTApp = () => {
   const [initiated, setInitiated] = useState(false);
@@ -73,7 +74,9 @@ const GaslessNFTApp = () => {
 
     if (!chainId || !data) return;
 
-    const sponsorAPIkey = "S8KmRS__lgotqO02LRlpxPbOYzW925_a7NGbIoDDI5o_";
+    // INPUT SPONSOR API KEY HERE TO MAKE SURE THAT YOU CAN GET GOING!
+    // HEAD OVER TO https://relay.gelato.network TO GET STARTED!
+    const sponsorAPIkey = "";
 
     const request: SponsoredCallERC2771Request = {
       chainId,
