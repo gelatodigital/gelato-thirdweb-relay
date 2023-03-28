@@ -2,7 +2,7 @@ import { ethers } from "ethers";
 import NFTDropABI from "../../assets/abi/NFTDrop.json";
 import {
   GelatoRelay,
-  SponsoredCallERC2771Request,
+  CallWithERC2771Request,
 } from "@gelatonetwork/relay-sdk";
 import StatusPoller from "../effects/StatusPoller";
 
@@ -76,9 +76,9 @@ const GaslessNFTApp = () => {
 
     // INPUT SPONSOR API KEY HERE TO MAKE SURE THAT YOU CAN GET GOING!
     // HEAD OVER TO https://relay.gelato.network TO GET STARTED!
-    const sponsorAPIkey = "";
+    const sponsorAPIkey = "tVkBUHGVkp_3_Snfs1ZHiupyEjoA_vrNOJNhLjlQAvA_";
 
-    const request: SponsoredCallERC2771Request = {
+    const request: CallWithERC2771Request = {
       chainId,
       target,
       data,
@@ -133,7 +133,7 @@ const GaslessNFTApp = () => {
       clearInterval(statusQuery);
       clearTimeout(popupTimer);
     };
-  }, [taskId, taskStatus, startTime, endTime]);
+  }, [taskId, taskStatus, startTime, endTime, refetch]);
 
   useEffect(() => {
     const getNextNFT = async (contract: NFTDrop, nfts: NFT[]) => {

@@ -109,7 +109,7 @@ const CounterRelayApp = () => {
       clearInterval(statusQuery);
       clearTimeout(popupTimer);
     };
-  }, [taskId, taskStatus, startTime, endTime]);
+  }, [taskId, taskStatus, startTime, endTime, refetch]);
 
   return (
     <div className="flex flex-row justify-center mt-5 mr-8 ml-8">

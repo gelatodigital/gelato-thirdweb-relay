@@ -7,7 +7,7 @@ import useTitle from "./hooks/useTitle";
 
 function App() {
   const desiredChainId = ChainId.Polygon;
-  useTitle("create-gasless-app");
+  useTitle("gelato-thirdweb-relay");
   return (
     <ThirdwebProvider desiredChainId={desiredChainId}>
       <div className="App bg-slate-600 h-screen flex flex-col content-center">
