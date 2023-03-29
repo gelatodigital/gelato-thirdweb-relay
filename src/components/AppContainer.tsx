@@ -1,11 +1,10 @@
-import React from "react";
-import CounterRelayApp from "./apps/CounterRelayApp";
+import CounterApp from "./apps/CounterApp";
 import GaslessNFTApp from "./apps/GaslessNFTApp";
 
 const AppContainer = () => {
   return (
     <div>
-      <CounterRelayApp />
+      <CounterApp />
       <GaslessNFTApp />
     </div>
   );

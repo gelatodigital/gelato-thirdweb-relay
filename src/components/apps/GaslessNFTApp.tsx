@@ -1,9 +1,6 @@
 import { ethers } from "ethers";
 import NFTDropABI from "../../assets/abi/NFTDrop.json";
-import {
-  GelatoRelay,
-  CallWithERC2771Request,
-} from "@gelatonetwork/relay-sdk";
+import { GelatoRelay, SponsoredCallRequest } from "@gelatonetwork/relay-sdk";
 import StatusPoller from "../effects/StatusPoller";
 
 import {
@@ -17,7 +14,7 @@ import { NFT, NFTDrop } from "@thirdweb-dev/sdk";
 import { useEffect, useState } from "react";
 
 // Make sure to deploy a target contract address for your NFT Drop using Thirdweb's dashboard!
-const target = "";
+const target = "PASTE_CONTRACT_ADDRESS_HERE"
 
 const GaslessNFTApp = () => {
   const [initiated, setInitiated] = useState(false);
@@ -76,20 +73,15 @@ const GaslessNFTApp = () => {
 
     // INPUT SPONSOR API KEY HERE TO MAKE SURE THAT YOU CAN GET GOING!
     // HEAD OVER TO https://relay.gelato.network TO GET STARTED!
-    const sponsorAPIkey = "tVkBUHGVkp_3_Snfs1ZHiupyEjoA_vrNOJNhLjlQAvA_";
+    const sponsorAPIkey = "PASTE_SPONSOR_API_KEY_HERE";
 
-    const request: CallWithERC2771Request = {
+    const request: SponsoredCallRequest = {
       chainId,
       target,
       data,
-      user: address as string,
     };
 
-    const relayResponse = await relay.sponsoredCallERC2771(
-      request,
-      provider,
-      sponsorAPIkey
-    );
+    const relayResponse = await relay.sponsoredCall(request, sponsorAPIkey);
     setTaskId(relayResponse.taskId);
     setStartTime(Date.now());
   };

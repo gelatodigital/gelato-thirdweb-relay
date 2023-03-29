@@ -16,7 +16,7 @@ import { useEffect, useState } from "react";
 
 const target = "0x730615186326cF8f03E34a2B49ed0f43A38c0603";
 
-const CounterRelayApp = () => {
+const CounterApp = () => {
   // task state
   const [initiated, setInitiated] = useState(false);
   const [taskId, setTaskId] = useState("");
@@ -168,4 +168,4 @@ const CounterRelayApp = () => {
   );
 };
 
-export default CounterRelayApp;
+export default CounterApp;
